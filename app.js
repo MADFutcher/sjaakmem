@@ -86,6 +86,7 @@ app.use('/api', memoryRoutes);
 const AuthRoutes = require('./routes/auth/Auth');
 app.use('/api', AuthRoutes);
 
+console.log(process.env.REACT_APP_API_URL)
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, './client/build', 'index.html'));
