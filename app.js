@@ -55,6 +55,9 @@ app.use(require('node-sass-middleware')({
 }));
       
 
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
@@ -85,11 +88,5 @@ app.use('/', memoryRoutes);
 
 const AuthRoutes = require('./routes/auth/Auth');
 app.use('/', AuthRoutes);
-
-
-// All other GET requests not handled before will return our React app
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
 
 module.exports = app;
