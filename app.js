@@ -80,13 +80,10 @@ app.locals.title = 'Van mama voor Tess';
 
 
 
-const index = require('./routes/index');
-app.use('/', index);
-
 const memoryRoutes = require('./routes/memory/Memory');
-app.use('/', memoryRoutes);
+app.use('/api', memoryRoutes);
 
 const AuthRoutes = require('./routes/auth/Auth');
-app.use('/', AuthRoutes);
+app.use('/api', AuthRoutes);
 
 module.exports = app;
