@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import {BlockPicker, HuePicker } from 'react-color';
+import {BlockPicker} from 'react-color';
 
 
 
