@@ -10,7 +10,7 @@
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 992px) {
     .card-columns {
         column-count: 4;
     }
