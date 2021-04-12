@@ -32,7 +32,6 @@ export default class NavigationBar extends Component {
 
 
     render() {
-        console.log(this.state)
         return (
             <Navbar bg="light" expand="lg" sticky="top" className="mb-5">
                 <Navbar.Brand>Van Mama voor Tess ❤️</Navbar.Brand>

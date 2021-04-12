@@ -20,7 +20,6 @@ memoryRoute.get('/memories', (req, res) =>{
   
     Memory.find({category})
           .then(memories=>{
-            console.log(memories)
             if(memories){
               res.status(200).json({data:memories});
             }else{
@@ -41,7 +40,6 @@ memoryRoute.post('/memories', cloudinaryUploader.single('File'), (req, res, next
   if(req.file){
     image = req.file.path
   }
-  console.log(category ,title, owner, memory, image, textColour, cardColour)
   Memory.create({category, title, memory, owner, image, textColour, cardColour})
         .then((results)=>{
           res.status(200).json({data:{ message: "Your Memory was successfully saved"}})

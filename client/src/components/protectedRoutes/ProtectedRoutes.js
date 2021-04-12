@@ -4,7 +4,6 @@ import { Route, Redirect } from 'react-router-dom';
 
 
 const ProtectedRoute  = ({component: Component , ...rest}) => {
-  console.log(localStorage)
     return (
       <Route
         {...rest}

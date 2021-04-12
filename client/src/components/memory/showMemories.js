@@ -25,7 +25,6 @@ export default class showMemories extends Component {
 
     componentDidUpdate(prevProp){
         if(prevProp.category != this.props.category){
-            console.log.apply('hello')
             this.setState({category: this.props.category}, function(){this.getMemories()})
         }
     }

@@ -41,7 +41,6 @@ export default class Login extends Component {
                     password: "",
                 });
                 localStorage.sid = response._id 
-                console.log(response)
                 const loggedInUser = response.username
                 const gezin = response.gezin
                 localStorage.setItem("user",loggedInUser)
