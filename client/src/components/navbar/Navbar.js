@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/esm/Button'
-
+import './NavBar.css'
 
 
 
@@ -39,6 +39,7 @@ export default class NavigationBar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
+                        <Button variant="light" className='m-2'><i class="fas fa-info-circle large"></i></Button>
                         {this.state.gezin &&
                             <div>
                                 <Button variant="light" className='m-2' onClick={this.showPrivate}>Privé</Button>

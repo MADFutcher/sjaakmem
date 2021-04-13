@@ -129,7 +129,7 @@ export default class CreateMemory extends Component {
                 <Form.Label>Herinnering</Form.Label>
                 <Form.Control
                   as='textarea'
-                  name='Herinnering'
+                  name='memory'
                   placeholder='Herinneringstekst'
                   rows={3}
                   value={this.state.memory}
