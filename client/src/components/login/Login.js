@@ -69,12 +69,12 @@ export default class Login extends Component {
                                         <Form.Row>
                                             <Col>
                                                 <Form.Group controlId="formBasicUsername">
-                                                    <Form.Control type="text" name="username" placeholder="Username"  onChange={this.handleOnChange}/>
+                                                    <Form.Control type="text" name="username" placeholder="Gebruikersnaam"  onChange={this.handleOnChange}/>
                                                 </Form.Group>
                                             </Col>
                                             <Col>
                                                 <Form.Group controlId="formBasicPassword">
-                                                    <Form.Control type="password" name="password" placeholder="Password" onChange={this.handleOnChange}/>
+                                                    <Form.Control type="password" name="password" placeholder="Wachtwoord" onChange={this.handleOnChange}/>
                                                 </Form.Group>
                                             </Col>
                                         </Form.Row>

@@ -27,6 +27,11 @@ export default class CreateMemory extends Component {
 
   MemoryService = new MemoryServices();
 
+  colourCard=['#F47EC1','#F38FCF','#F398D6','#F3A1DD','#F2B2EB']
+
+ textColour=['#000','#4C4F54','#E6EDF5']
+
+
   handleOnChange = (e) => {
     const target = e.target;
     const name = target.name;
@@ -104,27 +109,28 @@ export default class CreateMemory extends Component {
               {this.state.gezin && 
                 <Form.Group controlId='memoryCategory'>
                   <fieldset>
-                      <Form.Check inline type="radio" aria-label="Public" label="Public" name='category' value='public' onChange={this.handleOnChange}/>
-                      <Form.Check inline type="radio" aria-label="Private" label="Private" name='category' value='private' onChange={this.handleOnChange}/>
+                      <Form.Check inline type="radio" aria-label="Private" label="Privé" name='category' value='private' onChange={this.handleOnChange}/>
+                      <Form.Check inline type="radio" aria-label="Public" label="Vrienden & Familie" name='category' value='public' onChange={this.handleOnChange}/>
                   </fieldset>
                 </Form.Group>
               }
               <Form.Group controlId='memoryTitle'>
-                <Form.Label>Title</Form.Label>
+                <Form.Label>Titel</Form.Label>
                 <Form.Control
                   type='text'
                   name='title'
-                  placeholder='Please enter a title for your memory'
+                  placeholder='Titel voor jouw herinnering'
                   value={this.state.title}
                   onChange={this.handleOnChange}
                 />
               </Form.Group>
 
               <Form.Group controlId='memoryDescription'>
-                <Form.Label>Memory</Form.Label>
+                <Form.Label>Herinnering</Form.Label>
                 <Form.Control
                   as='textarea'
-                  name='memory'
+                  name='Herinnering'
+                  placeholder='Herinneringstekst'
                   rows={3}
                   value={this.state.memory}
                   onChange={this.handleOnChange}
@@ -134,14 +140,14 @@ export default class CreateMemory extends Component {
               <Form.Group>
                 <Form.File
                   id='memory-file'
-                  label='Upload foto'
+                  label='Upload foto / video'
                   name='file'
                   onChange={this.handleOnChange}
                 />
               </Form.Group>
 
               <Form.Group controlId='memoryFrom'>
-                <Form.Label>Name</Form.Label>
+                <Form.Label>Naam</Form.Label>
                 <Form.Control
                   type='text'
                   name='owner'
@@ -153,20 +159,20 @@ export default class CreateMemory extends Component {
               <Form.Row className="align-items-center">
                 <Col xs="auto" md="auto">
                   <Form.Group controlId='memoryTextColour'>
-                    <Form.Label className='text-center'>Text Colour</Form.Label>
-                    <ColourPicker colourChange={this.handleTextColourChange}/>
+                    <Form.Label className='text-center'>Tekst Kleur</Form.Label>
+                    <ColourPicker colours={this.textColour} colourChange={this.handleTextColourChange}/>
                   </Form.Group>
                 </Col>
                 <Col xs="auto" md="auto" >
                   <Form.Group controlId='memoryCardColour'>
-                    <Form.Label>Card Colour</Form.Label>
-                    <ColourPicker colourChange={this.handleCardColourChange}/>
+                    <Form.Label >Kaart Kleur</Form.Label>
+                    <ColourPicker colours={this.colourCard} colourChange={this.handleCardColourChange}/>
                   </Form.Group>
                 </Col>
                 <Col xs="auto" md="auto" className="ml-md-5">
                   <Card style={{backgroundColor:this.state.cardColour}} >
                     <Card.Body>
-                      <Card.Title style={{color:this.state.textColour}}>Example Card</Card.Title>
+                      <Card.Title style={{color:this.state.textColour}}>Voorbeeld Kaart</Card.Title>
                         <Card.Text style={{color:this.state.textColour}}>
                           Velit sint esse est esse consectetur aute minim elit.
                         </Card.Text>
@@ -175,7 +181,7 @@ export default class CreateMemory extends Component {
                 </Col>
               </Form.Row>
               <Button variant='success' onClick={this.handleSubmit} className='mt-2'>
-                Submit
+                Toevoegen
               </Button>
             </Form>
           </Card.Body>

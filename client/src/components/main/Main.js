@@ -43,7 +43,7 @@ export default class Main extends Component {
 
     render() {
         return (
-            <div>
+            <div className='backgroundColour'>
                 <NavigationBar createMemory={this.createMemory} user={this.state.user} gezin={this.state.gezin} showPublic={this.showPublic} showPrivate={this.showPrivate}/>
                 <div className="container-fluid">
                     {this.state.createMemory && 

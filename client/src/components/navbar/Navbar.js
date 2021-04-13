@@ -24,12 +24,13 @@ export default class NavigationBar extends Component {
 
     showPrivate=()=>{
         this.props.showPrivate()
+        this.setState({createMemory:false})
     }
 
     showPublic=()=>{
         this.props.showPublic()
+        this.setState({createMemory:false})
     }
-
 
     render() {
         return (
@@ -40,11 +41,11 @@ export default class NavigationBar extends Component {
                     <Nav className="ml-auto">
                         {this.state.gezin &&
                             <div>
-                                <Button variant="light" className='m-2' onClick={this.showPrivate}>Private</Button>
-                                <Button variant="light" className='m-2' onClick={this.showPublic}>Public</Button>
+                                <Button variant="light" className='m-2' onClick={this.showPrivate}>Privé</Button>
+                                <Button variant="light" className='m-2' onClick={this.showPublic}>Vrienden & Familie</Button>
                             </div>
                         }
-                        <Button variant="light" onClick={this.createMemory} className='m-2'>{this.state.createMemory ? "Show Memories" : "Create Memory"}</Button>
+                        <Button variant="light" onClick={this.createMemory} className='m-2'>{this.state.createMemory ? "Bekijk Herinneringen" : "Creëer Herinnering"}</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

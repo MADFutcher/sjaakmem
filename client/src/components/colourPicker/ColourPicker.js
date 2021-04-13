@@ -9,21 +9,25 @@ export default class ColourPicker extends Component {
         super(props);
         this.state = {
             background: '#fff',
+            colours:this.props.colours
           };
     }
 
    
     handleChangeComplete = (color) => {
+        console.log(color)
         this.setState({ background: color.hex });
         this.props.colourChange(color.hex);
       };
 
 
     render() {
+      console.log(this.state.colours)
         return (
             <BlockPicker
+              colors = {this.state.colours}
               color={ this.state.background }
-              onChangeComplete={ this.handleChangeComplete }
+              onChange={ this.handleChangeComplete }
               saturation={false}
             />
           );
