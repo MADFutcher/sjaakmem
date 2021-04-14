@@ -29,7 +29,7 @@ export default class CreateMemory extends Component {
 
   colourCard=['#F47EC1','#F38FCF','#F398D6','#F3A1DD','#F2B2EB']
 
- textColour=['#000','#4C4F54','#E6EDF5']
+  textColour=['#000','#4C4F54','#E6EDF5']
 
 
   handleOnChange = (e) => {
@@ -58,7 +58,7 @@ export default class CreateMemory extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const bttn = e.target
-    bttn.innerHTML = 'Saving...'
+    bttn.innerHTML = 'Opslaan...'
   
     const {category, title, memory, owner, file, textColour, cardColour } = this.state;
     this.MemoryService.postMemory(category, title, memory, file, owner, textColour, cardColour)
@@ -74,11 +74,19 @@ export default class CreateMemory extends Component {
           cardColour:'',
           file: null,
         });
-        bttn.innerHTML='Submit'
+        bttn.innerHTML='Toevoegen'
       })
       .catch((error) => {
-        this.setState({ error: true, message: error.response.data.message, memorySaved: false });
-        bttn.innerHTML='Submit'
+
+        
+        let message;
+        if(error.response.data.error.errors.title || error.response.data.error.errors.owner ){
+          message = 'Check of jouw titel / naam is ingevuld'
+        }else{
+          message = 'Iets ging mis, probeer nog eens'
+        }
+        this.setState({ error: true, message, memorySaved: false });
+        bttn.innerHTML='Toevoegen'
       });
   };
 

@@ -5,16 +5,6 @@ const cloudinaryUploader = require('../../configs/cloudinary-setup');
 const Memory       = require('../../models/memory-model');
 
 
-
-
-// AWS.config.update({
-//   accessKeyId: process.env.AWS_KEY_ID,
-//   secretAccessKey: process.env.AWS_SECRET_KEY
-// });
-
-// let s3 = new AWS.S3();
-
-
 memoryRoute.get('/memories', (req, res) =>{
     const {category} = req.query
   
@@ -42,10 +32,10 @@ memoryRoute.post('/memories', cloudinaryUploader.single('File'), (req, res, next
   }
   Memory.create({category, title, memory, owner, image, textColour, cardColour})
         .then((results)=>{
-          res.status(200).json({data:{ message: "Your Memory was successfully saved"}})
+          res.status(200).json({data:{ message: "Jouw herinnering is succesvol opgeslagen"}})
         })
         .catch(err => {
-          res.status(500).json({message: "An issue occured please try again"})
+          res.status(500).json({error: err, message: "An issue occured please try again"})
         })
 })
 

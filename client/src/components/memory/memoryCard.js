@@ -67,6 +67,22 @@ export default function MemoryCard(props) {
             </Card>
         )
     }
+    if(!props.image && !props.memory){
+        return (
+            <Card className="text-center" style={{backgroundColor:`${props.cardColour}`,color:`${props.textColour}`, justifyContent: 'center'}}> 
+                <Card.Body>
+                    <Card.Title>{props.title}</Card.Title>
+                    <blockquote className="blockquote mb-0 card-body">
+                        <footer>
+                            <small style={{color:`${props.textColour}`}}>
+                                <cite title={props.owner}>{props.owner}</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </Card.Body>
+            </Card>
+        )
+    }
 }
 
 
