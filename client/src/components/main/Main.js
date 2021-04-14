@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import NavigationBar from '../navbar/Navbar'
 import CreateMemory from '../memory/createMemory'
 import ShowMemories from '../memory/showMemories'
+import InfoModal from '../modal/InfoModal'
 
 import './Main.css'
 
@@ -14,7 +15,8 @@ export default class Main extends Component {
             showPrivate: this.props.gezin === 'false' ? false : true,
             createMemory:false,
             showMemories:true,
-            memories:[]
+            memories:[],
+            showModal:false
         }
     }
 
@@ -41,10 +43,20 @@ export default class Main extends Component {
         })
     }
 
+    setModalShow=()=>{
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+    }
+
     render() {
         return (
             <div className='backgroundColour'>
-                <NavigationBar createMemory={this.createMemory} user={this.state.user} gezin={this.state.gezin} showPublic={this.showPublic} showPrivate={this.showPrivate}/>
+                <NavigationBar createMemory={this.createMemory} user={this.state.user} gezin={this.state.gezin} showPublic={this.showPublic} showPrivate={this.showPrivate} setModalShow={this.setModalShow}/>
+                <InfoModal
+                    show={this.state.showModal}
+                    onHide={this.setModalShow}
+                />
                 <div className="container-fluid">
                     {this.state.createMemory && 
                         <CreateMemory gezin={this.state.gezin}/>
