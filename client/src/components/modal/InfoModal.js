@@ -42,9 +42,11 @@ export default function InfoModal(props) {
                 <li>Je kunt nu je herinnering bekijken. Bij grotere bestanden zal dit iets langer duren. </li>
             </ul>
         </Modal.Body>
-        <Modal.Footer className="mr-auto">
-                ** Mocht je toch een fout hebben gemaakt stuur een <a href="mailto:mikalob247@gmail.com">bericht</a> via de contact knop.
-            </Modal.Footer>
+        <Modal.Footer>
+            <p className="mr-auto">
+            ** Mocht je toch een fout hebben gemaakt stuur een <a href="mailto:mikalob247@gmail.com">bericht</a> via de contact knop.
+            </p>
+        </Modal.Footer>
       </Modal>
     )
 }
