@@ -2,17 +2,26 @@
     .card-columns {
         column-count: 2;
     }
+    .mainVid {
+        max-width: 100% 
+    }
 }
 
 @media (min-width: 768px) {
     .card-columns {
         column-count: 3;
     }
+    .mainVid {
+        max-width: 100% 
+    }
 }
 
 @media (min-width: 992px) {
     .card-columns {
         column-count: 4;
+    }
+    .mainVid {
+        max-width: 50% 
     }
 }
 
@@ -21,11 +30,17 @@
     .card-columns {
         column-count: 6;
     }
+    .mainVid {
+        max-width: 75% 
+    }
 }
 
 @media (min-width: 1200px) {
     .card-columns {
         column-count: 5;
+    }
+    .mainVid {
+        max-width: 75% 
     }
 }
 
@@ -33,4 +48,8 @@
     .card-columns {
         column-count: 5;
     }
+    .mainVid {
+        max-width: 45% 
+    }
 }
+

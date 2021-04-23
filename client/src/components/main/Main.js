@@ -3,6 +3,8 @@ import NavigationBar from '../navbar/Navbar'
 import CreateMemory from '../memory/createMemory'
 import ShowMemories from '../memory/showMemories'
 import InfoModal from '../modal/InfoModal'
+import Card from 'react-bootstrap/Card'
+import ReactPlayer from 'react-player'
 
 import './Main.css'
 
@@ -58,6 +60,11 @@ export default class Main extends Component {
                     onHide={this.setModalShow}
                 />
                 <div className="container-fluid">
+                    {this.state.showPrivate &&
+                        <Card className="mx-auto mainVid mb-5">
+                            <video src="http://d13mtmfvucoiy9.cloudfront.net/PortretJacqueline.m4v" type="video/mp4" controls></video>
+                        </Card>
+                    }
                     {this.state.createMemory && 
                         <CreateMemory gezin={this.state.gezin}/>
                     }

@@ -43,7 +43,7 @@ export default class NavigationBar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Button variant="light" className='m-2' onClick={this.setModalShow}><i class="fas fa-info-circle large"></i></Button>
+                        <Button variant="light" className='m-2' onClick={this.setModalShow}><i className="fas fa-info-circle large"></i></Button>
                         {this.state.gezin &&
                             <div>
                                 <Button variant="light" className='m-2' onClick={this.showPrivate}>Privé</Button>

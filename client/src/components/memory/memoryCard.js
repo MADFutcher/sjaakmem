@@ -30,6 +30,22 @@ export default function MemoryCard(props) {
             </Card>
         )
     }
+
+    if(props.image && !props.memory && !props.title && !props.owner){
+        return (
+            
+            <Card className="text-center" style={{backgroundColor:`${props.cardColour}`,color:`${props.textColour}`,justifyContent: 'center'}}>
+                
+                 {props.image.includes('.mp') && 
+                    <ReactPlayer url={props.image} width='100%' height='100%' controls/>
+                }
+                {!props.image.includes('.mp') &&
+                    <Card.Img variant='top' src={props.image} style={{objectFit:'contain', maxWidth:'100%'}}/>
+                }
+            </Card>
+        )
+    }
+    
     if(props.image && !props.memory){
         return (
             
@@ -47,6 +63,8 @@ export default function MemoryCard(props) {
             </Card>
         )
     }
+
+   
 
     if(!props.image && props.memory){
         return (
