@@ -61,8 +61,11 @@ export default class Main extends Component {
                 />
                 <div className="container-fluid">
                     {!this.state.showPrivate &&
-                        <Card className="mx-auto mainVid mb-5">
+                        <Card className="mx-auto mainVid mb-5 text-center" style={{backgroundColor:`#F47EC1`,color:`black`}}>
                             <video src="http://d13mtmfvucoiy9.cloudfront.net/PortretJacqueline.m4v" type="video/mp4" controls></video>
+                            <Card.Body>
+                                <Card.Title>Stichting Komma docu over Jaqueline</Card.Title>
+                            </Card.Body>
                         </Card>
                     }
                     {this.state.createMemory && 
