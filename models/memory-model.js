@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const memorySchema = new Schema({
         title:{
             type: String,
-            required: [true, 'Please provide a title']
+            // required: [true, 'Please provide a title']
         },
         memory:{
             type: String,
@@ -14,7 +14,7 @@ const memorySchema = new Schema({
         },
         owner: {
             type: String,
-            required: [true, 'Please provide your name']
+            // required: [true, 'Please provide your name']
         },
         textColour:{
             type: String,
