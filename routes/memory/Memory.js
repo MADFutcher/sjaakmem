@@ -9,7 +9,7 @@ memoryRoute.get('/memories', (req, res) =>{
     const {category} = req.query
   
     Memory.find({category})
-          // .sort({createdAt:-1})
+          .sort({createdAt:-1})
           .then(memories=>{
             if(memories){
               res.status(200).json({data:memories});
