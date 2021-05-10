@@ -60,7 +60,7 @@ export default class Main extends Component {
                     onHide={this.setModalShow}
                 />
                 <div className="container-fluid">
-                    {!this.state.showPrivate &&
+                    {this.state.showPrivate &&
                         <Card className="mx-auto mainVid mb-5 text-center" style={{backgroundColor:`#F47EC1`,color:`black`}}>
                             <video src="http://d13mtmfvucoiy9.cloudfront.net/PortretJacqueline.m4v" type="video/mp4" controls></video>
                             <Card.Body>
